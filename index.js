@@ -44,7 +44,7 @@ function buttonAnimation(currentKey) {
 // Detecting button press
 const btns = document.querySelectorAll('.drum')
 for (let i = 0; i < btns.length; i++) {
-    btns[i].addEventListener('mousedown', function (e) {
+    btns[i].addEventListener('mousedown', function () {
         const buttonText = this.textContent
         audioPlay(buttonText)
         buttonAnimation(buttonText)
