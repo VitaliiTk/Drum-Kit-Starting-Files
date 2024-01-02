@@ -54,7 +54,6 @@ for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener('mousedown', function () {
         const buttonText = this.textContent
         audioPlay(buttonText)
-        // buttonAnimation(buttonText)
     })
 }
 
@@ -62,5 +61,4 @@ for (let i = 0; i < btns.length; i++) {
 document.addEventListener('keydown', function (event) {
     const key = event.key
     audioPlay(key)
-    // buttonAnimation(key)
 })
