@@ -16,5 +16,30 @@ const w = new Audio('./sounds/tom-1.mp3'),
 for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click', function () {
         this.style.color = 'white'
+        const buttonText = this.textContent
+        console.log(buttonText);
+        switch (buttonText) {
+            case 'w':
+                w.play()
+                break
+            case 'a':
+                a.play()
+                break
+            case 's':
+                s.play()
+                break
+            case 'd':
+                d.play()
+                break
+            case 'j':
+                j.play()
+                break
+            case 'k':
+                k.play()
+                break
+            case 'l':
+                l.play()
+                break
+        }
     })
 }
