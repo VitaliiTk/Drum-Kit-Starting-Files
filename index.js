@@ -1,37 +1,45 @@
-function audioPlay(name) {
-    switch (name) {
+function audioPlay(keyName) {
+    switch (keyName) {
         case 'w':
-            const w = new Audio('./sounds/tom-1.mp3')
-            w.play()
+            const tom1 = new Audio('./sounds/tom-1.mp3')
+            tom1.play()
+            buttonAnimation(keyName)
             break
         case 'a':
-            const a = new Audio('./sounds/tom-2.mp3')
-            a.play()
+            const tom2 = new Audio('./sounds/tom-2.mp3')
+            tom2.play()
+            buttonAnimation(keyName)
             break
         case 's':
-            const s = new Audio('./sounds/tom-3.mp3')
-            s.play()
+            const tom3 = new Audio('./sounds/tom-3.mp3')
+            tom3.play()
+            buttonAnimation(keyName)
             break
         case 'd':
-            const d = new Audio('./sounds/tom-4.mp3')
-            d.play()
+            const tom4 = new Audio('./sounds/tom-4.mp3')
+            tom4.play()
+            buttonAnimation(keyName)
             break
         case 'j':
-            const j = new Audio('./sounds/snare.mp3')
-            j.play()
+            const snare = new Audio('./sounds/snare.mp3')
+            snare.play()
+            buttonAnimation(keyName)
             break
         case 'k':
-            const k = new Audio('./sounds/crash.mp3')
-            k.play()
+            const crash = new Audio('./sounds/crash.mp3')
+            crash.play()
+            buttonAnimation(keyName)
             break
         case 'l':
-            const l = new Audio('./sounds/kick-bass.mp3')
-            l.play()
+            const kick = new Audio('./sounds/kick-bass.mp3')
+            kick.play()
+            buttonAnimation(keyName)
             break
-        default: console.log(name);
+        default: console.log(keyName);
     }
 }
 
+// button animation
 function buttonAnimation(currentKey) {
     const activeButton = document.querySelector(`.${currentKey}`)
     activeButton.classList.add('pressed')
@@ -46,7 +54,7 @@ for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener('mousedown', function () {
         const buttonText = this.textContent
         audioPlay(buttonText)
-        buttonAnimation(buttonText)
+        // buttonAnimation(buttonText)
     })
 }
 
@@ -54,5 +62,5 @@ for (let i = 0; i < btns.length; i++) {
 document.addEventListener('keydown', function (event) {
     const key = event.key
     audioPlay(key)
-    buttonAnimation(key)
+    // buttonAnimation(key)
 })
