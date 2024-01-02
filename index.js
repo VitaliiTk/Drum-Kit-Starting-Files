@@ -14,7 +14,7 @@ const w = new Audio('./sounds/tom-1.mp3'),
 // })
 
 for (let i = 0; i < btns.length; i++) {
-    btns[i].addEventListener('click', function () {
+    btns[i].addEventListener('mousedown', function () {
         this.style.color = 'white'
         const buttonText = this.textContent
         console.log(buttonText);
@@ -40,6 +40,7 @@ for (let i = 0; i < btns.length; i++) {
             case 'l':
                 l.play()
                 break
+            default: console.log(buttonText);
         }
     })
 }
