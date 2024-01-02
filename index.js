@@ -32,12 +32,22 @@ function audioPlay(name) {
     }
 }
 
+function buttonAnimation(currentKey) {
+    const activeButton = document.querySelector(`.${currentKey}`)
+    console.log(activeButton);
+    activeButton.classList.add('pressed')
+    setTimeout(() => {
+        activeButton.classList.remove('pressed')
+    }, 100);
+}
+
 // Detecting button press
 const btns = document.querySelectorAll('.drum')
 for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener('mousedown', function (e) {
         const buttonText = this.textContent
         audioPlay(buttonText)
+        buttonAnimation(buttonText)
     })
 }
 
@@ -45,4 +55,5 @@ for (let i = 0; i < btns.length; i++) {
 document.addEventListener('keydown', function (event) {
     const key = event.key
     audioPlay(key)
+    buttonAnimation(key)
 })
