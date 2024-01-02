@@ -34,7 +34,6 @@ function audioPlay(name) {
 
 function buttonAnimation(currentKey) {
     const activeButton = document.querySelector(`.${currentKey}`)
-    console.log(activeButton);
     activeButton.classList.add('pressed')
     setTimeout(() => {
         activeButton.classList.remove('pressed')
